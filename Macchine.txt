@@ -1,0 +1,24 @@
+public class Macchine{
+   
+    private Macchina lista[];
+    private int i=0;
+   public Macchine(){
+        lista=new Macchina[100];
+    }
+   
+    public Macchina[] getLista(){
+        return lista;
+    }
+    public void setLista(Macchina [] lista){
+        this.lista=lista;
+    }
+    public Macchina getMacchina(int i){
+        return lista[i];
+    }
+    public void setMacchina (Macchina macchina, int i){
+        this.lista[i]=macchina;
+    }
+    public void aggiungiMacchina(Macchina macchina){
+        this.lista[i]=macchina;
+        i++;
+    }   
