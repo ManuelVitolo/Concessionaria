@@ -1,52 +1,48 @@
 public class Macchina{
-    private String marca;
-    private String nome;
-    private float prezzo;
-    private float cavalli;
-    
-    
-    public Macchina(String marca,String nome,float prezzo, float cavalli;){
-        setMarca(marca);
-       setNome(nome);
-       setPrezzo(prezzo);
-       setCavalli(cavalli);
-        
-    }
-    public Macchina(Macchina p){
-        setNome(p.getNome());
-        setQuantita(p.getQuantita());
-        setPrezzo(p.getPrezzo());
-        
-    }
-    
-    public String getNome(){
-        return nome;
-    }
-    public void setNome(String nome){
-        this.nome=nome;
-    }
-    public String getMarca(){
-        return marca;
-    }
-     public void setMarca(float marca){
-        this.marca=marca;
-    }
-    public float getPrezzo(){
-        return prezzo;
-    }
-     public void setPrezzo(float prezzo){
+private String marca;
+private String nome;
+private float prezzo;
+private float cavalli;
 
-        this.prezzo=prezzo;
-    }
-     public float getCavalli(){
-        return cavalli;
-    }
-     public void setCavalli(float cavalli){
 
-        this.cavalli=cavalli;
-    }
+public Macchina(String marca,String nome,float prezzo, float cavalli){
+setMarca(marca);
+setNome(nome);
+setPrezzo(prezzo);
+setCavalli(cavalli);
 
-    
-   
-    
+}
+public Macchina(Macchina p){
+setMarca(p.getMarca());
+setNome(p.getNome());
+setPrezzo(p.getPrezzo());
+setCavalli(p.getCavalli());
+}
+
+public String getNome(){
+return nome;
+}
+public void setNome(String nome){
+this.nome=nome;
+}
+public String getMarca(){
+return marca;
+}
+public void setMarca(String marca){
+this.marca=marca;
+}
+public float getPrezzo(){
+return prezzo;
+}
+public void setPrezzo(float prezzo){
+
+this.prezzo=prezzo;
+}
+public float getCavalli(){
+return cavalli;
+}
+public void setCavalli(float cavalli){
+
+this.cavalli=cavalli;
+}
 }
