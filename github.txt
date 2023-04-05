@@ -1,0 +1,30 @@
+public class Vendite {
+    private float totale;
+private Macchina[] v;
+private Cliente cliente[];
+private int i=0;
+    public Vendite(float totale, Macchina[]v){
+        setTotale(totale);
+        setV(v);
+    }
+    public String getTotale(){
+        return totale;
+       
+    }
+    public void setTotale(float totale){
+        this.totale=totale;
+    }
+    public void setV(Macchina[] v){
+        this.v=v;
+    }
+    public Macchina getV(){
+        return v;
+    }
+    public void StampaVendita(Macchina[]v){
+     System.out.println("La macchina"+v[i].getMarca   +"è stata venduta al cliente");   
+    }
+    public void stampaTotale(float totale){
+    System.out.println("Il totale delle vendite è uguale a"+getTotale());
+    
+}
+}
