@@ -3,7 +3,7 @@ public class Macchine{
     private Macchina lista[];
     private int i=0;
    public Macchine(){
-        lista=new Macchina[100];
+        lista=new Macchina[10];
     }
    
     public Macchina[] getLista(){
@@ -12,13 +12,21 @@ public class Macchine{
     public void setLista(Macchina [] lista){
         this.lista=lista;
     }
-    public Macchina getMacchina(int i){
+    public Macchina getMacchina (int i){
         return lista[i];
     }
     public void setMacchina (Macchina macchina, int i){
         this.lista[i]=macchina;
     }
-    public void aggiungiMacchina(Macchina macchina){
+    public void aggiungiMacchina (Macchina macchina){
         this.lista[i]=macchina;
         i++;
-    }   
+    }
+    
+    public void stampaMacchina (Macchina macchina){
+        System.out.println("Tutte le macchine a nostra disposizione:");
+        for(i=0; i<10; i++){
+            System.out.println("Marca:"+ lista[i].getMarca()+ "Nome"+ lista[i].getNome()+ "Prezzo"+lista[i].getPrezzo()+"Cavalli"+lista[i].getCavalli());
+        }
+    }
+} 
