@@ -1,4 +1,4 @@
-import java.util.*
+import java.util.Scanner;
 public class Main {
     public static Macchina creaMacchina(){
         Scanner sc=new Scanner(System.in);
@@ -22,9 +22,10 @@ public class Main {
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         Macchine n=new Macchine();
+        Vendite v=new Vendite();
         int scelta;
         do{
-            System.out.println("Premi 0 per uscire, 1 per creare macchina, 2 per vandere macchina ad un utente, 3 per mostrare macchine in vendita, 4 per mostrare le macchine vendute");
+            System.out.println("Premi 0 per uscire, 1 per creare macchina, 2 per vendere macchina ad un utente, 3 per mostrare macchine in vendita, 4 per mostrare le macchine vendute");
             scelta=sc.nextInt();
             if(scelta==1){
                 System.out.println("Quante macchine vuoi creare?");
@@ -33,11 +34,11 @@ public class Main {
                     n.aggiungiMacchina(creaMacchina());
                 }
             }else if(scelta==2){
-                addProdottiInNegozio(n);               
+            	v.compraMacchina(null);              
             }else if(scelta==3){
                 n.stampaMacchina();               
             }else if(scelta==4){
-                n.stampaVendite();               
+                v.stampaVendute();               
             }
         }while(scelta!=0);
     }
