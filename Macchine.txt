@@ -1,8 +1,8 @@
 public class Macchine{
-   
-    private Macchina lista[];
+    public Macchina lista[];
     private int i=0;
-   public Macchine(){
+    
+    public Macchine(){
         lista=new Macchina[10];
     }
    
@@ -23,10 +23,10 @@ public class Macchine{
         i++;
     }
     
-    public void stampaMacchina (Macchina macchina){
+    public void stampaMacchina(){
         System.out.println("Tutte le macchine a nostra disposizione:");
         for(i=0; i<10; i++){
-            System.out.println("Marca:"+ lista[i].getMarca()+ "Nome"+ lista[i].getNome()+ "Prezzo"+lista[i].getPrezzo()+"Cavalli"+lista[i].getCavalli());
+            System.out.println("Marca:"+" "+lista[i].getMarca()+" "+"Nome:"+" "+lista[i].getNome()+ " "+"Prezzo:"+" "+lista[i].getPrezzo()+" "+"Cavalli:"+" "+lista[i].getCavalli());
         }
     }
 } 
