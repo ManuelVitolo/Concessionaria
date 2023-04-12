@@ -1,13 +1,13 @@
+import java.util.Scanner;
 public class Vendite {
     private float totale;
-private Macchina[] v;
-private Cliente cliente[];
-private int i=0;
-    public Vendite(float totale, Macchina[]v){
-        setTotale(totale);
-        setV(v);
+    private Macchina[] v;
+    private int i=0;
+    Scanner sc= new Scanner(System.in);
+    public Vendite(){
+    	v=new Macchina [10];
     }
-    public String getTotale(){
+    public float getTotale(){
         return totale;
        
     }
@@ -17,14 +17,43 @@ private int i=0;
     public void setV(Macchina[] v){
         this.v=v;
     }
-    public Macchina getV(){
+    public Macchina[] getV(){
         return v;
     }
     public void StampaVendita(Macchina[]v){
-     System.out.println("La macchina"+v[i].getMarca   +"è stata venduta al cliente");   
+     System.out.println("La macchina"+v[i].getMarca()+"è stata venduta al cliente");   
     }
     public void stampaTotale(float totale){
-    System.out.println("Il totale delle vendite è uguale a"+getTotale());
+    System.out.println("Il totale delle vendite è uguale a"+" "+getTotale());
     
-}
+    }
+    
+    public void compraMacchina(Macchina[] lista){
+    System.out.println("Dammi il nome della marca che vuoi comprare:"); 
+    String sceltaMarca=sc.nextLine();
+    boolean l=false;
+    for(i=0; i<10; i++){
+        if (sceltaMarca==lista[i].getMarca()){
+            System.out.println("Hai aquistato una "+" "+sceltaMarca);
+            l=true;
+            v[i]=lista[i];
+            lista[i]=lista[0];
+            totale=(getTotale()+lista[i].getPrezzo());
+        }
+        else{
+            l=true;
+            System.out.println("Macchina non trovata");
+        }
+    }
+    System.out.println("Complimenti hai acquistato una macchina");
+    System.out.println("Cashout Temporaneo = "+" "+getTotale());
+    }
+    
+    public void stampaVendute(){
+    	System.out.println("Fino ad oggi abbiamo venduto tutte queste auto:");
+    	for(i=0; i<10; i++){
+    		System.out.println("Marca:"+ v[i].getMarca()+ " "+"Nome"+ v[i].getNome()+ " "+"Prezzo"+v[i].getPrezzo()+" "+"Cavalli"+v[i].getCavalli());
+    	}
+    	System.out.println("Il totale ammonta a:"+" "+getTotale());
+    }
 }
